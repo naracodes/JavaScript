@@ -1,18 +1,23 @@
 //Captura o elemento html h2 que tem o id=area
 var area = document.getElementById('area')
 
+//Definindo um usuario para teste
+const usuarioCadastrado = "nara"
+const senhaCadastrada = 123456
+const nomeUsuarioCadastrado = "Nara Alencar"
+
 function entrar() {
     //Recebe uma entrada de dados do usuario através de uma caixa de diálogo
-    var nome = prompt("Digite seu nome: ")
+    var usuario = prompt("Digite seu usuario: ")
+    var senha = prompt("Digite sua senha: ")
 
     //Verifica se a variável nome está vazia ou é nula
-    if(nome === "" || nome === null) {
-        alert("Ops, algo deu errado!")
-        //Muda o texto do elemento area
-        area.innerText = "Clique no botão para acessar..."
+    if(usuario != usuarioCadastrado && senha != senhaCadastrada) {
+        alert("Usuário ou senha inválidos!")
     }else {
         //Muda o texto do elemento area
-        area.innerText = "Bem Vindo, " + nome + " "
+
+        area.innerText = "Bem Vindo, " + nomeUsuarioCadastrado + " "
         
         //Cria um elemento do tipo button
         let botaoSair = document.createElement("button")
@@ -28,5 +33,17 @@ function entrar() {
 function sair() {
     alert("Até mais!")
     //Muda o texto do elemento area
-    area.innerText = "Você saiu!"
+    area.innerText = "Gerenciamento de Estoque"
+}
+
+function cadastrar() {
+    var nome = prompt("Digite seu nome completo: ")
+    var usuario = prompt("Digite seu nome de usuario: ")
+    var senha = prompt("Digite sua senha: ")
+
+    if(nome === null || usuario === null || senha === null){
+        alert("Por favor, tente novamente e insira todos os dados!")
+    }else {
+        alert("Cadastro feito com sucesso!")
+    }
 }
