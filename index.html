@@ -7,7 +7,16 @@
 </head>
 <body>
     <h2 id="area">Gerenciamento de Estoque</h2>
-    <button onclick="entrar()">Acessar</button>
+    <form onsubmit="return entrar(event)">
+        <label>user </label>
+        <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuario"><br/><br/>
+
+        <label>senha </label>
+        <input type="text" name="senha" id="senha" placeholder="Digite sua senha"><br/><br/>
+
+        <button onclick="">Acessar</button><br/>
+    </form>
+    <br/>
     <button onclick="cadastrar()">Cadastre-se</button>
     <script src="script.js"></script>
 </body>

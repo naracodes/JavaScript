@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Índice Corporal</title>
+</head>
+<body>
+    <!--Essa função onsubmit atualiza a pagina no fim de um preenchimento de cadastro-->
+    <form onsubmit="return calcular(event)">
+        <label>Digite seu peso: </label><br/>
+        <input type="text" name="peso" id="peso" placeholder="Exemplo 65"><br/><br/>
+
+        <label>Digite sua altura: </label><br/>
+        <input type="text" name="altura" id="altura" placeholder="Exemplo 1.60"><br/><br/>
+
+        <input type="submit" value="Calcular IMC">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
