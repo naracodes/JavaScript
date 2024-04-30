@@ -1,5 +1,6 @@
 //Captura o elemento html h2 que tem o id=area
 var area = document.getElementById('area')
+var form = document.getElementById('form-calc')
 
 //Definindo um usuario para teste
 const usuarioCadastrado = "nara"
@@ -11,11 +12,12 @@ function entrar(event) {
     senha = document.getElementById('senha').value
     event.preventDefault()
     //Verifica se a variável nome está vazia ou é nula
-    if(usuario != usuarioCadastrado && senha != senhaCadastrada) {
+    if(usuario != usuarioCadastrado || senha != senhaCadastrada) {
         alert("Usuário ou senha inválidos!")
     }else {
+        window.location.href = 'calculadora.html';
         //Muda o texto do elemento area
-        area.innerText = "Bem Vindo, " + nomeUsuarioCadastrado + " "
+        //area.innerText = "Bem Vindo, " + nomeUsuarioCadastrado + " "
         
         //Cria um elemento do tipo button
         let botaoSair = document.createElement('button')
@@ -24,7 +26,7 @@ function entrar(event) {
         //Adiciona um evento no botão chamando a função sair
         botaoSair.onclick = sair
         //Adiciona o elemento filho botaoSair ao elemento area 
-        area.appendChild(botaoSair)
+        form.appendChild(botaoSair)
     }
 
     document.getElementById('usuario').value = ""
