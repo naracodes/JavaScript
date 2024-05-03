@@ -1,7 +1,8 @@
 let listElement = document.querySelector("#app ul");
 let inputElement = document.querySelector("#app input");
 let buttonElement = document.querySelector("#app button");
-let tarefas = [];
+//Json.parse para converter em lista
+let tarefas = JSON.parse(localStorage.getItem("@listaTarefas") || []);
 
 function renderTarefas() {
     //Limpa a lista para não ficar duplicando valores 
@@ -30,6 +31,8 @@ function renderTarefas() {
     })
 }
 
+renderTarefas();
+
 function adicionarTarefa() {
     if(inputElement.value === "") {
         alert("Digite alguma tarefa.");
@@ -41,6 +44,7 @@ function adicionarTarefa() {
         inputElement.value = "";
         //Chama a função para mostrar a lista de tarefas
         renderTarefas();
+        salvarTarefas();
     }
 
     
@@ -52,4 +56,11 @@ function excluirTarefa(posicaoTarefa) {
     //Removendo um item da lista
     tarefas.splice(posicaoTarefa, 1);
     renderTarefas();
+    salvarTarefas();
+}
+
+function salvarTarefas() {
+    //Localstorage é o armazenamento local do navegador
+    //Jsonstringfy para converter uma lista em string
+    localStorage.setItem("@listaTarefas", JSON.stringify(tarefas));
 }
